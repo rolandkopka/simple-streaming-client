@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Button, Toolbar, Link } from "@material-ui/core";
+import { AppBar, Toolbar, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link as RouterLink } from "react-router-dom";
 import GoogleAuth from "./GoogleAuth";
