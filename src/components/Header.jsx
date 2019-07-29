@@ -2,6 +2,7 @@ import React from "react";
 import { AppBar, Button, Toolbar, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link as RouterLink } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
 
 const Header = () => {
   const classes = useStyles();
@@ -17,11 +18,9 @@ const Header = () => {
             underline="none"
             className={classes.title}
           >
-            Streamy
+            {"Streamy"}
           </Link>
-          <Button to="/" component={RouterLink} className={classes.login}>
-            Login
-          </Button>
+          <GoogleAuth />
         </Toolbar>
       </AppBar>
     </div>
@@ -31,9 +30,6 @@ const Header = () => {
 const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
-    color: "inherit"
-  },
-  login: {
     color: "inherit"
   }
 }));
