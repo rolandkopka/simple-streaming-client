@@ -28,6 +28,7 @@ export class StreamCreate extends Component {
             <Field
               name="description"
               component={this.renderTextField}
+              required
               multiline
               label="Description"
             />
@@ -38,6 +39,20 @@ export class StreamCreate extends Component {
     );
   }
 }
+
+const validate = formValues => {
+  const errors = {};
+
+  if (!formValues.title) {
+    errors.title = "You must enter a title";
+  }
+
+  if (!formValues.description) {
+    errors.description = "You must enter a description";
+  }
+
+  return errors;
+};
 
 export default reduxForm({
   form: "streamCreate"
