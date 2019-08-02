@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-import { TextField, Button, Container, CssBaseline } from "@material-ui/core";
+import { TextField, Button, Container } from "@material-ui/core";
 
 export class StreamCreate extends Component {
-  renderTextField = ({ input, ...custom }) => {
-    return <TextField {...input} {...custom} />;
+  renderTextField = ({ input, meta, ...custom }) => {
+    console.log(meta);
+    return (
+      <>
+        <TextField
+          error={meta.touched && meta.invalid}
+          helperText={meta.touched && meta.error}
+          {...input}
+          {...custom}
+        />
+      </>
+    );
   };
 
   onSubmit(formValues) {
@@ -14,7 +24,6 @@ export class StreamCreate extends Component {
   render() {
     return (
       <Container>
-        <CssBaseline />
         <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
           <div className="container">
             <Field
@@ -55,5 +64,6 @@ const validate = formValues => {
 };
 
 export default reduxForm({
-  form: "streamCreate"
+  form: "streamCreate",
+  validate
 })(StreamCreate);
