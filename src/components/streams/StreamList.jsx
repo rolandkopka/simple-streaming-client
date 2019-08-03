@@ -28,7 +28,7 @@ export class StreamList extends React.Component {
     if (stream.userId === this.props.currentUserId) {
       return (
         <ListItemSecondaryAction>
-          <IconButton>
+          <IconButton component={RouterLink} to={`/streams/edit/${stream.id}`}>
             <EditIcon />
           </IconButton>
           <IconButton>

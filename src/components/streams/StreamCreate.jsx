@@ -6,7 +6,6 @@ import { TextField, Button, Container } from "@material-ui/core";
 
 export class StreamCreate extends Component {
   renderTextField = ({ input, meta, ...custom }) => {
-    console.log(meta);
     return (
       <>
         <TextField
