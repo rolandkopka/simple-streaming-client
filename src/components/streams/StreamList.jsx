@@ -31,7 +31,10 @@ export class StreamList extends React.Component {
           <IconButton component={RouterLink} to={`/streams/edit/${stream.id}`}>
             <EditIcon />
           </IconButton>
-          <IconButton>
+          <IconButton
+            component={RouterLink}
+            to={`/streams/delete/${stream.id}`}
+          >
             <DeleteIcon />
           </IconButton>
         </ListItemSecondaryAction>
