@@ -12,7 +12,7 @@ export class StreamCreate extends Component {
   render() {
     return (
       <>
-        <Typography variant="h3">Create a Stream</Typography>
+        <Typography variant="h3">Create Stream</Typography>
         <StreamForm onSubmit={this.onSubmit} />
       </>
     );
