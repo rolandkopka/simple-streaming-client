@@ -1,27 +1,20 @@
 import React from "react";
-import history from "../history";
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogContentText,
-  DialogActions,
-  Button
+  DialogActions
 } from "@material-ui/core";
 
-const Modal = () => {
+const Modal = props => {
   return (
-    <Dialog open onClose={() => history.push("/")}>
-      <DialogTitle>{"Delete Stream"}</DialogTitle>
+    <Dialog open onClose={props.onClose}>
+      <DialogTitle>{props.title}</DialogTitle>
       <DialogContent>
-        <DialogContentText>
-          Are you sure you want to delete this stream?
-        </DialogContentText>
+        <DialogContentText>{props.content}</DialogContentText>
       </DialogContent>
-      <DialogActions>
-        <Button color="secondary">NOPE!</Button>
-        <Button color="primary">Yes</Button>
-      </DialogActions>
+      <DialogActions>{props.actions}</DialogActions>
     </Dialog>
   );
 };
