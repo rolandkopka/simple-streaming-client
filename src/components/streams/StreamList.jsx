@@ -45,7 +45,12 @@ export class StreamList extends React.Component {
   renderList() {
     return this.props.streams.map(stream => {
       return (
-        <ListItem key={stream.id}>
+        <ListItem
+          button
+          key={stream.id}
+          component={RouterLink}
+          to={`/streams/${stream.id}`}
+        >
           <ListItemAvatar>
             <Avatar>
               <VideocamIcon />
