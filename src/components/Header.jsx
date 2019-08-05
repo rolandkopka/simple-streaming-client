@@ -18,7 +18,7 @@ const Header = () => {
             underline="none"
             className={classes.title}
           >
-            {"Streamy"}
+            {"Simple Stream"}
           </Link>
           <GoogleAuth />
         </Toolbar>
